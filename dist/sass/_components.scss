@@ -1,0 +1,479 @@
+                .logo {
+                    height: 8rem;
+                    //width: 9.5rem;
+                    //margin-left: 3rem;
+                }
+                
+                /////////////////////////////
+                /////search/////////////////
+                .search {
+                    flex: 0 0 40%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &__input {
+                        font-family: inherit;
+                        font-size: inherit;
+                        color: inherit;
+                        background-color: $color-grey-light-2;
+                        border: none;
+                        border-radius: 100px;
+                        padding: .7rem 2rem;
+                        width: 90%;
+                        transition: all .2s;
+                        margin-right: -3.25rem;
+                        &:focus {
+                            outline: none;
+                            width: 100%;
+                            background-color: $color-grey-light-3;
+                        }
+                        &::-webkit-input-placeholder {
+                            font-weight: 100;
+                            color: $color-grey-light-4;
+                        }
+                    }
+                    &__input:focus+&__button {
+                        background-color: $color-grey-light-3;
+                    }
+                    &__button {
+                        border: none;
+                        background-color: $color-grey-light-2;
+                        &:focus {
+                            outline: none;
+                        }
+                        &:active {
+                            transform: translateY(2px);
+                        }
+                    }
+                    &__icon {
+                        height: 2rem;
+                        width: 2rem;
+                        fill: $color-grey-dark-3;
+                    }
+                }
+                
+                /////////////////////////////
+                /////navigation//////////////
+                .user-nav {
+                    align-self: stretch;
+                    display: flex;
+                    align-items: center;
+                    visibility: hidden;
+                    ///select user-nav all direct children
+                    &>* {
+                        padding: 0 2rem;
+                        cursor: pointer;
+                        height: 100%;
+                    }
+                    &>*:hover {
+                        background-color: $color-grey-light-2;
+                    }
+                    &__icon-box {
+                        display: flex;
+                        align-items: center;
+                    }
+                    &__icon {
+                        height: 2.25rem;
+                        width: 2.25rem;
+                        fill: $color-grey-dark-2;
+                    }
+                }
+                
+                ////////////////////////////
+                ///////movie searched//////////////
+                .movie__searched {
+                    margin-left: 3rem;
+                    margin-bottom: 2rem;
+                    letter-spacing: .1rem;
+                    font-size: 3rem;
+                    font-weight: 700;
+                    background-image: linear-gradient(to right, $color-light-red, $color-dark-red);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+                
+                ////test
+                .movie__container {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 5rem;
+                    flex-wrap: wrap;
+                    &__result {
+                        flex: 20%;
+                    }
+                }
+                
+                ////////////////////////////
+                ///////posters//////////////
+                .movie {
+                    margin-bottom: 5rem;
+                    &__photo {
+                        margin-bottom: 1.5rem;
+                        box-shadow: 0 1.5rem 4rem rgba($color-grey-dark-1, .4);
+                        border-radius: 2px;
+                        width: 90%;
+                        height: 32rem;
+                        border-radius: 1rem;
+                        transition: all .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                    &__details {
+                        text-align: center;
+                        font-size: 1.4rem;
+                        color: $color-grey-dark-1;
+                        margin-left: -6rem;
+                        font-weight: 200;
+                        margin-bottom: 3rem;
+                        padding: 1.5rem;
+                    }
+                    &__name {
+                        display: inline-block;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        background-image: linear-gradient(to right, $color-light-red, $color-dark-red);
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        letter-spacing: .2rem;
+                        &:hover {
+                            transform: skewY(2deg) skewX(15deg) scale(1.1);
+                            text-shadow: .5rem 1rem 2rem rgba($color-black, .3);
+                        }
+                    }
+                }
+                
+                ///////////////IMAGE NOT AVAILABLE//////////
+                .noImg {
+                    position: relative;
+                    text-align: center;
+                    height: 32rem;
+                    width: 21.2rem;
+                    border: solid black;
+                    border-radius: .8rem;
+                    background-color: $color-yellow;
+                    box-shadow: 0 1.5rem 4rem rgba($color-grey-dark-1, .4);
+                    transition: all .2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                    &__icon {
+                        display: block;
+                        margin-top: -5rem;
+                        width: 5rem;
+                        height: 5rem;
+                        fill: $color-purple;
+                        position: relative;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    &__text {
+                        margin-top: 1rem;
+                        display: block;
+                        font-size: 1.5rem;
+                        letter-spacing: .2rem;
+                        text-transform: uppercase;
+                        color: $color-black;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                
+                //////////////////PAGINATION///////////////
+                .pagination {
+                    display: flex;
+                    justify-content: space-between;
+                    &__previous {
+                        text-decoration: none;
+                        display: inline-block;
+                        background-color: $color-grey-light-5;
+                        color: $color-black;
+                        font-size: 1.5rem;
+                        margin-left: 1rem;
+                        margin-bottom: .5rem;
+                        padding: 1rem;
+                        transition: all .2s cubic-bezier(.17, .67, .83, .67);
+                        &:hover {
+                            background-color: $color-grey-dark-4;
+                            transform: scale(1.1);
+                            color: $color-white;
+                        }
+                    }
+                    &__next {
+                        text-decoration: none;
+                        display: inline-block;
+                        background-color: $color-dark-red;
+                        color: $color-primary;
+                        font-size: 1.5rem;
+                        margin-right: 1rem;
+                        margin-bottom: .5rem;
+                        padding: 1rem;
+                        transition: all .2s cubic-bezier(.17, .67, .83, .67);
+                        &:hover {
+                            background-color: $color-grey-dark-4;
+                            color: $color-black;
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+                
+                ///////////////single movie details
+                .single__movie__poster {
+                    margin-right: 6rem;
+                    align-self: center;
+                    margin-top: -18rem;
+                }
+                
+                .single__img {
+                    //height: 50rem;
+                    height: 60vh;
+                    border-radius: .8rem;
+                    box-shadow: 0 1.5rem 4rem rgba($color-grey-dark-1, .4);
+                    transition: .2s ease-in;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+                
+                .single__movie__info {
+                    display: flex;
+                    justify-content: start;
+                    margin: 2rem;
+                    &-name {
+                        margin-left: -2rem;
+                    }
+                    &-release {
+                        margin-left: 1rem;
+                    }
+                }
+                
+                .single__movie__details {
+                    margin-top: -25rem;
+                    &-icons {
+                        display: flex;
+                    }
+                    &-overview {
+                        margin-top: 1rem;
+                    }
+                    &-director {
+                        margin-top: 2rem;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+                
+                .movie-name {
+                    font-size: 4rem;
+                    color: $color-dark-red;
+                    letter-spacing: .2rem;
+                    font-weight: 400;
+                }
+                
+                .release-date {
+                    font-size: 4rem;
+                    color: $color-dark-red;
+                    letter-spacing: .2rem;
+                    font-weight: 400;
+                }
+                
+                .movie-duration {
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    margin-right: .5rem;
+                    fill: $color-grey-dark-2;
+                }
+                
+                .movie-rating {
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    margin-right: .5rem;
+                    fill: $color-grey-dark-2;
+                }
+                
+                .movie-timing {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: $color-dark-red;
+                    margin-right: 3rem;
+                    align-self: flex-start;
+                    letter-spacing: .2rem;
+                }
+                
+                .movie-rating {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: $color-dark-red;
+                    align-self: flex-start;
+                    letter-spacing: .2rem;
+                }
+                
+                .overview-heading {
+                    font-size: 3rem;
+                    font-weight: 500;
+                    letter-spacing: .2rem;
+                    color: $color-dark-red;
+                }
+                
+                .movie-summary {
+                    width: 60rem;
+                    font-size: 1.5rem;
+                    color: $color-black;
+                    text-align: justify;
+                }
+                
+                .icon-director {
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    fill: $color-grey-dark-2;
+                    margin-right: .5rem;
+                }
+                
+                .director-name,
+                .director-heading {
+                    font-size: 1.5rem;
+                    letter-spacing: .2rem;
+                    color: $color-dark-red;
+                    font-weight: 600;
+                }
+                
+                .director-heading {
+                    margin-top: .5rem;
+                }
+                
+                //////////////Buttons///////////////////
+                .buttons {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 1.5rem;
+                    &__link-btn {
+                        font-size: 2rem;
+                        font-weight: 400;
+                        color: $color-black;
+                        text-decoration: none;
+                        padding: 1rem;
+                        border: none;
+                        border-radius: .2rem solid;
+                        background-color: $color-grey-light-5;
+                        border-radius: .8rem;
+                        cursor: pointer;
+                        transition: .2s ease-in-out;
+                        &:hover {
+                            background-color: $color-grey-dark-4;
+                            transform: scale(1.1);
+                        }
+                    }
+                    &__nav {}
+                    &__nav__like,
+                    &__nav__watch {
+                        background-color: $color-grey-light-5;
+                        border: none;
+                        color: $color-black;
+                        padding: 1rem;
+                        text-align: center;
+                        text-decoration: none;
+                        font-size: 2rem;
+                        cursor: pointer;
+                        border-radius: .8rem;
+                        transition: .2s ease-in-out;
+                        &:hover {
+                            background-color: $color-grey-dark-4;
+                            transform: scale(1.1);
+                        }
+                    }
+                    &__nav__icon {
+                        width: 3rem;
+                        height: 3rem;
+                        fill: $color-grey-dark-2;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    &__nav__watch {
+                        margin-left: 2rem;
+                    }
+                }
+                
+                .btn {
+                    margin-top: 1.5rem;
+                    &__back {
+                        font-size: 2rem;
+                        font-weight: 400;
+                        color: $color-black;
+                        text-decoration: none;
+                        border: none;
+                        border-radius: .8rem;
+                        padding: 1.2rem;
+                        cursor: pointer;
+                        transition: .2s ease-in-out;
+                        &:hover {
+                            background-color: $color-grey-dark-4;
+                            transform: scale(1.1);
+                        }
+                    }
+                    &__icon {
+                        width: 3rem;
+                        height: 3rem;
+                        fill: $color-grey-dark-2;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+                
+                //////////////SPINNER///////////////////
+                .spinner {
+                    width: 20rem;
+                    height: 20rem;
+                    border-radius: 50%;
+                    border-top: 1rem solid $color-black;
+                    position: relative;
+                    animation: rotation 2s linear infinite;
+                }
+                
+                .spinner::before,
+                .spinner::after {
+                    content: '';
+                    width: 20rem;
+                    height: 20rem;
+                    position: absolute;
+                    top: -1rem;
+                    left: 0;
+                    border-radius: 50%;
+                }
+                
+                .spinner::before {
+                    border-top: 1rem solid #ff3031;
+                    transform: rotate(120deg);
+                }
+                
+                .spinner::after {
+                    border-top: 1rem solid #007b00;
+                    transform: rotate(240deg);
+                }
+                
+                .spinner span {
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    position: absolute;
+                    line-height: 20rem;
+                    letter-spacing: .2rem;
+                    font-size: 1.5rem;
+                    animation: reverseRotation 2s linear infinite;
+                }
+                
+                @keyframes rotation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+                
+                @keyframes reverseRotation {
+                    to {
+                        transform: rotate(-360deg);
+                    }
+                }

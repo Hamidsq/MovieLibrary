@@ -1,0 +1,40 @@
+.container {
+    max-width: 160rem;
+    margin: 0 auto;
+    background-color: $color-grey-light-2;
+    box-shadow: $dark-shadow;
+    min-height: 150rem;
+}
+
+.header {
+    font-size: 1.4rem;
+    height: 9rem;
+    background-color: #fff;
+    border-bottom: 1px solid $color-grey-light-2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.film-posters {
+    padding: 1rem 0;
+    background-color: #fff;
+    height: 145rem;
+}
+
+.single__movie {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    min-height: 100rem;
+    max-width: 136rem;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
