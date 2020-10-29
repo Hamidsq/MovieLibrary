@@ -208,32 +208,26 @@
                     &__previous {
                         text-decoration: none;
                         display: inline-block;
-                        background-color: $color-grey-light-5;
-                        color: $color-black;
                         font-size: 1.5rem;
                         margin-left: 1rem;
-                        margin-bottom: .5rem;
+                        margin-bottom: 0.5rem;
+                        margin-right: auto;
                         padding: 1rem;
-                        transition: all .2s cubic-bezier(.17, .67, .83, .67);
+                        transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
                         &:hover {
-                            background-color: $color-grey-dark-4;
                             transform: scale(1.1);
-                            color: $color-white;
                         }
                     }
                     &__next {
                         text-decoration: none;
                         display: inline-block;
-                        background-color: $color-dark-red;
-                        color: $color-primary;
                         font-size: 1.5rem;
                         margin-right: 1rem;
-                        margin-bottom: .5rem;
+                        margin-bottom: 0.5rem;
+                        margin-left: auto;
                         padding: 1rem;
-                        transition: all .2s cubic-bezier(.17, .67, .83, .67);
+                        transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
                         &:hover {
-                            background-color: $color-grey-dark-4;
-                            color: $color-black;
                             transform: scale(1.1);
                         }
                     }

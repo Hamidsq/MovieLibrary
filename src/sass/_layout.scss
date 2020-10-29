@@ -3,7 +3,7 @@
     margin: 0 auto;
     background-color: $color-grey-light-2;
     box-shadow: $dark-shadow;
-    min-height: 150rem;
+    min-height: 105rem;
 }
 
 .header {
@@ -19,7 +19,7 @@
 .film-posters {
     padding: 1rem 0;
     background-color: #fff;
-    height: 145rem;
+    height: 100rem;
 }
 
 .single__movie {
@@ -29,7 +29,8 @@
     align-items: center;
     background-color: #fff;
     min-height: 100rem;
-    max-width: 136rem;
+    max-width: 160rem;
+    margin: 0 auto;
 }
 
 .loader {

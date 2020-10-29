@@ -1,16 +1,23 @@
 import axios from 'axios';
+import { apiKey, proxy } from '../config';
 
 export default class Search {
     constructor(query) {
         this.query = query
     }
 
-    async getResults() {
-        const apiKey = 'b9f62c9a';
-        const proxy = 'http://cors-anywhere.herokuapp.com/';
+    async getResults(page = 1) {
+        const moviesList = [];
         try {
-            const res = await axios(`${proxy}http://www.omdbapi.com/?apikey=${apiKey}&s=${this.query}&type=movie`);
-            this.result = res.data;
+
+            while (page <= 4) {
+                const res = await axios(`${proxy}http://www.omdbapi.com/?apikey=${apiKey}&s=${this.query}&type=movie&page=${page}`);
+                const response = res.data;
+                response.Search.forEach(movies => moviesList.push(movies))
+                page++;
+                this.result = moviesList;
+            }
+
         } catch (error) {
             console.log(error);
         }

@@ -3,7 +3,10 @@ export const elements = {
     searchInput: document.querySelector('.search__input'),
     searchResList: document.querySelector('.movie__container'),
     movieContainer: document.querySelector('.film-posters'),
-    movieSearched: document.querySelector('.movie__searched')
+    movieSearched: document.querySelector('.movie__searched'),
+    searchResPages: document.querySelector('.pagination'),
+    singleMovie: document.querySelector('.single__movie'),
+    backBtn: document.querySelector('.btn__back')
 }
 export const elementStrings = {
     loader: 'loader'
