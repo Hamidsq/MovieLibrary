@@ -10,6 +10,9 @@ module.exports = {
         filename: 'js/bundle.js'
     },
 
+    devtool: 'source-map',
+
+
     devServer: {
         contentBase: './dist'
     },
@@ -34,6 +37,13 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
+
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [{
+                    loader: 'file-loader',
+                }, ]
 
             }
 

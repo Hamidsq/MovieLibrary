@@ -1,26 +1,37 @@
 import { elements } from "./base";
 
-export const clearMovie = () => {
-    elements.singleMovie.innerHTML = '';
-}
 
 export const goBack = () => {
+    console.log('button clicked');
     window.history.back();
 }
-export const renderMovie = movie => {
-    const markUp = ` <div class="single__movie__poster">
-    <img class="single__img" src="${movie.poster}" alt="${movie.Title}">
+export const renderMovie = (movie, isLiked, isWatch, fromNavbar) => {
+        let markUp;
+        let img;
+        if (movie.poster === 'N/A') {
+            img = `<div class="noImg big-size" >
+            <svg class="noImg__icon">
+                <use xlink:href="img/sprite.svg#icon-sad"></use>
+            </svg>
+            <span class="noImg__text">image not available</span>
+        </div>`;
 
-</div>
+        } else {
+            img = `<img class="single__img" src="${movie.poster}" alt="${movie.Title}">`;
+        }
 
-<div class="single__movie__details" href="#${movie.imdbID}" >
+        markUp = ` <div class="single__movie">
+    
+    <div class="single__movie__poster">${img}</div>
+
+<div class="single__movie__details" href="#${movie.imdbID === 'N/A' ? 'Unavailable' : movie.imdbID}" >
 
     <div class="single__movie__info">
         <div class="single__movie__info-name">
-            <h1 class="movie-name">${movie.title}</h1>
+            <h1 class="movie-name">${movie.title === 'N/A' ? 'Unavailable' : movie.title}</h1>
         </div>
         <div class="single__movie__info-release">
-            <h1 class="release-date">&#40;${movie.year}&#41;</h1>
+            <h1 class="release-date">&#40;${movie.year === 'N/A' ? 'Unavailable' : movie.year}&#41;</h1>
         </div>
     </div>
 
@@ -34,7 +45,7 @@ export const renderMovie = movie => {
             </svg>
 
         </div>
-        <h3 class="movie-timing">${movie.runTime}</h3>
+        <h3 class="movie-timing">${movie.runTime === 'N/A' ? 'Unavailable' : movie.runTime}</h3>
 
         <div class="icon-box">
             <svg class="movie-rating">
@@ -42,12 +53,12 @@ export const renderMovie = movie => {
              </svg>
 
         </div>
-        <h3 class="movie-rating">${movie.imdbRating}</h3>
+        <h3 class="movie-rating">${movie.imdbRating === 'N/A' ? 'Unavailable' : movie.imdbRating}</h3>
 
     </div>
     <div class="single__movie__details-overview">
         <h2 class="overview-heading">Overview</h2>
-        <p class="movie-summary">${movie.plot}</p>
+        <p class="movie-summary">${movie.plot === 'N/A' ? 'Unavailable' : movie.plot}</p>
     </div>
 
     <div class="single__movie__details-director">
@@ -60,7 +71,7 @@ export const renderMovie = movie => {
         </div>
 
 
-        <h3 class="director-name">${movie.director}</h3>
+        <h3 class="director-name">${movie.director === 'N/A' ? 'Unavailable' : movie.director}</h3>
 
     </div>
     <h3 class="director-heading">Director</h3>
@@ -70,19 +81,22 @@ export const renderMovie = movie => {
 
     <div class="buttons">
         <div class="buttons__link">
-            <button class="buttons__link-btn">${movie.imdbRating}</button>
+            <button class="buttons__link-btn">
+            <a href="https://www.imdb.com/title/${movie.imdbID}" target="_blank" class="imdbScore">
+            <span>IMDB ${movie.imdbRating === 'N/A' ? 'Unavailable' : movie.imdbRating} </span></a>
+            </button>
         </div>
 
         <div class="buttons__nav">
             <button class="buttons__nav__like">
                     click to like
                     <svg class="buttons__nav__icon">
-                        <use xlink:href="img/sprite.svg#icon-heart"></use>
+                        <use xlink:href="img/sprite.svg#icon-heart${isLiked ? '' : 'icon-heart-outlined'}"></use>
                     </svg>
                 </button>
             <button class="buttons__nav__watch">
                     <svg class="buttons__nav__icon">
-                        <use xlink:href="img/sprite.svg#icon-plus"></use>
+                        <use xlink:href="img/sprite.svg#icon-bookmark-add${isWatch ? '' : 'icon-bookmark-add1'}"></use>
                     </svg>
                     add to watch list
 
@@ -90,8 +104,8 @@ export const renderMovie = movie => {
         </div>
 
     </div>
-
-    <div class="btn">
+    ${fromNavbar === true ? '' :
+   ` <div class="btn">
         <button class="btn__back">
                 <svg class="btn__icon">
                     <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
@@ -99,12 +113,12 @@ export const renderMovie = movie => {
                 Back
             </button>
 
-    </div>
+    </div>`}
 
 </div>  
-    
+    </div>
     `;
-    //elements.searchResList.innerHTML = "";
-    elements.singleMovie.insertAdjacentHTML('afterbegin', markUp);
+    elements.searchResList.innerHTML = markUp;
+    elements.searchResPages.innerHTML = '';
 
 }

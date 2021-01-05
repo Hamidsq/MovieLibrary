@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
 
 
+
     <link rel="stylesheet" href="css/style.css">
     <title>MoviFlex &mdash;place to find your favourite films</title>
 </head>
@@ -27,22 +28,87 @@
             </form>
 
             <nav class="user-nav">
-                <div class="user-nav__icon-box">
-                    <svg class="user-nav__icon">
-                        <use xlink:href="img/sprite.svg#icon-bookmark"></use>
-                    </svg>
-                </div>
+                <div class="user-nav__icon-box like">
 
-                <div class="user-nav__icon-box">
                     <svg class="user-nav__icon">
                         <use xlink:href="img/sprite.svg#icon-heart"></use>
                     </svg>
+
+                    <div class="user-nav__like" id="scroll">
+                        <!--
+                            <li class="nav-like">
+                                <div class="like-img">
+                                    <img src="img/nat-1.jpg" class="movie-img" alt="rambo">
+                                </div>
+                                <div class="like-name">
+                                    <h3>Rambo</h3>
+                                </div>
+
+                            </li>
+
+                        -->
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="user-nav__icon-box addWatch">
+
+                    <svg class="user-nav__icon">
+                        <use xlink:href="img/SVG1/icon-heart.svg"></use>
+                    </svg>
+
+
+                    <ul class="user-nav__addWatch" id="scroll">
+
+                        <!--
+
+                        
+                        <li class="nav-addWatch">
+                            <div class="addWatch-img">
+                                <img src="img/nat-1.jpg" class="movie-img" alt="rambo">
+                            </div>
+                            <div class="addWatch-name">
+                                <h3>Rambo</h3>
+                            </div>
+
+                        </li>
+
+                        <li class="nav-addWatch">
+                            <div class="addWatch-img">
+                                <img src="img/nat-2.jpg" class="movie-img" alt="rambo">
+                            </div>
+                            <div class="addWatch-name">
+                                <h3>Rambo</h3>
+                            </div>
+
+                        </li>
+                        -->
+
+
+                    </ul>
                 </div>
             </nav>
 
         </header>
 
-        <main class="film-posters">
+
+
+
+
+        <div class="film-posters">
+
+            <div class="homePage">
+                <!-- <div class="homePage__heading">
+                    <p class="homePage__heading--main">Movie Library</p>
+                    <p class="homePage__heading--sub">Browse movies to find the next movie or shows to watch</p>
+                </div>
+                <div class="homePage__img"></div>-->
+
+            </div>
+
 
 
 
@@ -50,7 +116,9 @@
                 <!--
                             <div class="movie__searched">
                                 <h1>&ldquo;search for Scarface&rdquo;</h1>
+                            </div> 
                         -->
+
                 <!--
                         <div class="movie__result">
                             <img src="img/nat-1.jpg" alt="Photo 1" class="movie__photo">
@@ -162,149 +230,151 @@
 -->
             </div>
 
-            <div class="pagination">
+            <div class="pagination ">
                 <!--
-                    <a href="#" class="pagination__previous"> &laquo;page 1</a>
-                    <a href="#" class="pagination__next">page 2 &raquo;</a>
-                        -->
+                    <a href="#" class="pagination__previous btn__page"> &laquo;page 1</a>
+                    <a href="#" class="pagination__next btn__page">page 2 &raquo;</a>
+                    -->
             </div>
-        </main>
 
+            <!-- <div class="single__movie">
+                
+            <div class="single__movie__poster">
+                <img class="single__img" src="img/nat-5.jpg" alt="Gladiator">
+    
+            </div>
+    
+            <div class="single__movie__details">
+    
+                <div class="single__movie__info">
+                    <div class="single__movie__info-name">
+                        <h1 class="movie-name">Blade Runner</h1>
+                    </div>
+                    <div class="single__movie__info-release">
+                        <h1 class="release-date">&#40;2005&#41;</h1>
+                    </div>
+                </div>
+    
+                <div class="single__movie__details-icons">
+    
+                    <div class="icon-box">
+    
+                        <svg class="movie-duration">
+                            <use xlink:href="img/sprite.svg#icon-clock2"></use> 
+                           
+                        </svg>
+    
+                    </div>
+                    <h3 class="movie-timing">40min</h3>
+    
+                    <div class="icon-box">
+                        <svg class="movie-rating">
+                            <use xlink:href="img/sprite.svg#icon-star-half"></use>
+                         </svg>
+    
+                    </div>
+                    <h3 class="movie-rating">8.0</h3>
+    
+                </div>
+                <div class="single__movie__details-overview">
+                    <h2 class="overview-heading">Overview</h2>
+                    <p class="movie-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac turpis egestas sed tempus. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Fames ac turpis
+                        egestas integer eget. Ac turpis egestas integer eget aliquet nibh praesent tristique. Diam vulputate ut pharetra sit amet aliquam id. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Pretium quam
+                        vulputate dignissim suspendisse in est ante. Tellus molestie nunc non blandit massa enim</p>
+                </div>
+    
+                <div class="single__movie__details-director">
+    
+                    <div class="movie-director">
+                        <svg class="icon-director">
+                            <use xlink:href="img/sprite.svg#icon-user"></use>
+                            
+                        </svg>
+                    </div>
+    
+    
+                    <h3 class="director-name">Tim Miller</h3>
+    
+                </div>
+                <h3 class="director-heading">Director</h3>
+    
+    
+    
+    
+                <div class="buttons">
+                    <div class="buttons__link">
+                        <button class="buttons__link-btn">IMDB 8.0</button>
+                    </div>
+    
+                    <div class="buttons__nav">
+                        <button class="buttons__nav__like">
+                                click to like
+                                <svg class="buttons__nav__icon">
+                                    <use href="img/sprite.svg#icon-heart"></use>
+                                </svg>
+                        </button>
+                        <button class="buttons__nav__watch">
+                                <svg class="buttons__nav__icon">
+                                    <use xlink:href="img/sprite.svg#icon-plus"></use>
+                                </svg>
+                                add to watch list
+    
+                        </button>
+                    </div>
+    
+                </div>
+    
+                <div class="btn">
+                    <button class="btn__back">
+                            <svg class="btn__icon">
+                                <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
+                            </svg>
+                            Back
+                        </button>
+    
+                </div>
+    
+    
+    
+    
+    
+    
+    
+            </div>  
+                    
+            </div>-->
+
+
+
+        </div>
+
+
+
+        <!--
+                <div class="load">
+                    <div class="spin"></div>
+                </div>
+
+
+           -->
 
 
     </div>
 
 
-    <!--
+
+
+    <!-- </div>
         <div class="noImg">
             <svg class="noImg__icon">
                      <use xlink:href="img/sprite.svg#icon-sad2"></use>
                     </svg>
             <span class="noImg__text">image not available</span>
         </div>
-    -->
+       -->
 
 
 
-
-
-
-
-
-
-    <section class="single__movie">
-        <!--
-        <div class="single__movie__poster">
-            <img class="single__img" src="img/nat-5.jpg" alt="Gladiator">
-
-        </div>
-
-        <div class="single__movie__details">
-
-            <div class="single__movie__info">
-                <div class="single__movie__info-name">
-                    <h1 class="movie-name">Blade Runner</h1>
-                </div>
-                <div class="single__movie__info-release">
-                    <h1 class="release-date">&#40;2005&#41;</h1>
-                </div>
-            </div>
-
-            <div class="single__movie__details-icons">
-
-                <div class="icon-box">
-
-                    <svg class="movie-duration">
-                        <use xlink:href="img/sprite.svg#icon-clock2"></use> 
-                       
-                    </svg>
-
-                </div>
-                <h3 class="movie-timing">40min</h3>
-
-                <div class="icon-box">
-                    <svg class="movie-rating">
-                        <use xlink:href="img/sprite.svg#icon-star-half"></use>
-                     </svg>
-
-                </div>
-                <h3 class="movie-rating">8.0</h3>
-
-            </div>
-            <div class="single__movie__details-overview">
-                <h2 class="overview-heading">Overview</h2>
-                <p class="movie-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ac turpis egestas sed tempus. Ultrices gravida dictum fusce ut placerat orci nulla pellentesque. Fames ac turpis
-                    egestas integer eget. Ac turpis egestas integer eget aliquet nibh praesent tristique. Diam vulputate ut pharetra sit amet aliquam id. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Pretium quam
-                    vulputate dignissim suspendisse in est ante. Tellus molestie nunc non blandit massa enim</p>
-            </div>
-
-            <div class="single__movie__details-director">
-
-                <div class="movie-director">
-                    <svg class="icon-director">
-                        <use xlink:href="img/sprite.svg#icon-user"></use>
-                        
-                    </svg>
-                </div>
-
-
-                <h3 class="director-name">Tim Miller</h3>
-
-            </div>
-            <h3 class="director-heading">Director</h3>
-
-
-
-
-            <div class="buttons">
-                <div class="buttons__link">
-                    <button class="buttons__link-btn">IMDB 8.0</button>
-                </div>
-
-                <div class="buttons__nav">
-                    <button class="buttons__nav__like">
-                            click to like
-                            <svg class="buttons__nav__icon">
-                                <use xlink:href="img/sprite.svg#icon-heart"></use>
-                            </svg>
-                        </button>
-                    <button class="buttons__nav__watch">
-                            <svg class="buttons__nav__icon">
-                                <use xlink:href="img/sprite.svg#icon-plus"></use>
-                            </svg>
-                            add to watch list
-
-                        </button>
-                </div>
-
-            </div>
-
-            <div class="btn">
-                <button class="btn__back">
-                        <svg class="btn__icon">
-                            <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
-                        </svg>
-                        Back
-                    </button>
-
-            </div>
-
-
-
-
-
-
-
-        </div>  
-                -->
-    </section>
-
-    <div class="loader">
-        <div class="spinner">
-            <span>Loading...</span>
-        </div>
-    </div>
-    -->
 
 </body>
 

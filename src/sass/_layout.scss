@@ -1,5 +1,5 @@
 .container {
-    max-width: 160rem;
+    max-width: 100%;
     margin: 0 auto;
     background-color: $color-grey-light-2;
     box-shadow: $dark-shadow;
@@ -7,6 +7,7 @@
 }
 
 .header {
+    position: relative;
     font-size: 1.4rem;
     height: 9rem;
     background-color: #fff;
@@ -26,16 +27,18 @@
     padding: 5rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-color: #fff;
-    min-height: 100rem;
-    max-width: 160rem;
+    min-height: 90rem;
     margin: 0 auto;
+    width: 100%;
 }
 
+
+/**
 .loader {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh;
-}
+}**/
