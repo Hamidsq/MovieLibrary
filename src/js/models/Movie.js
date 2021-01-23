@@ -8,7 +8,6 @@ export default class Movie {
     async getMovie() {
         try {
             const res = await axios(`${proxy}http://www.omdbapi.com/?apikey=${apiKey}&i=${this.id}&type=movie&plot=full`);
-            console.log(res);
             this.title = res.data.Title;
             this.imdbID = res.data.imdbID;
             this.poster = res.data.Poster;

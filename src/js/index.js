@@ -16,6 +16,7 @@ WATCH LIST OBJECT   */
 
 const state = {};
 
+/****SEARCH CONTROLLER******/
 const searchController = async(type, page) => {
 
     if (type === 'newSearch') {
@@ -29,6 +30,7 @@ const searchController = async(type, page) => {
             //3-PREPARE UI FOR RESULTS LIKE LOADER AND CLEAR SEARCH INPUT
             searchView.clearInput();
             searchView.clearResult();
+            searchView.clearSearchQuery();
             renderLoader(elements.searchResList);
             try {
                 //4-SEARCH FOR MOVIES  
@@ -47,6 +49,7 @@ const searchController = async(type, page) => {
         //3-PREPARE UI FOR RESULTS LIKE LOADER AND CLEAR SEARCH INPUT
         searchView.clearInput();
         searchView.clearResult();
+        searchView.clearSearchQuery();
         renderLoader(elements.searchResList);
         try {
             //4-SEARCH FOR MOVIES  
@@ -66,6 +69,8 @@ const searchController = async(type, page) => {
 
 
 
+
+/****MOVIE CONTROLLER******/
 const movieController = async(movieID, fromNavbar = false) => {
     //Grab movie ID
     console.log(movieID);
@@ -99,7 +104,6 @@ const movieController = async(movieID, fromNavbar = false) => {
 
 
 /****LIKE CONTROLLER******/
-
 const likeController = () => {
     if (!state.likes) state.likes = new Likes();
     const movieID = state.movie.imdbID;
@@ -129,10 +133,6 @@ const likeController = () => {
     }
     //toggle the like menu
     likeView.toggleLikeMenu(state.likes.getNumLikes());
-
-
-
-
 }
 
 const watchController = () => {
@@ -171,8 +171,6 @@ const watchController = () => {
 
 }
 window.addEventListener('load', () => {
-
-
     renderHomePage();
     state.likes = new Likes();
 
@@ -195,7 +193,7 @@ window.addEventListener('load', () => {
 
     //render the watch
     watchView.renderAll(state.watch.watch);
-    //state.watch.watch.forEach(watch => watchView.renderWatch(watch));
+
 })
 
 /****EVENTLISTENERS******/
@@ -216,34 +214,23 @@ elements.searchResPages.addEventListener('click', e => {
 });
 
 
-
 elements.searchResList.addEventListener('click', e => {
     const movie = e.target.closest('.movie__result');
+
     if (movie) {
         const movieID = movie.dataset.id;
         movieController(movieID);
-    }
-});
+    } else if (e.target.closest('.btn__back')) {
+        searchController('oldSearch', state.search.page);
 
-//go back to search result 
-const button = document.querySelector('.btn__back');
-elements.searchResList.addEventListener('click', e => {
-    const backBtn = e.target.closest('.btn__back');
-    if (backBtn) {
-        searchController('oldSearch', state.search.result.page)
-    }
-});
-
-
-elements.searchResList.addEventListener('click', e => {
-    //const likeBtn = e.target.closest('.buttons__nav__like')
-    if (e.target.matches('.buttons__nav__like', '.buttons__nav__like *')) {
+    } else if (e.target.matches('.buttons__nav__like', '.buttons__nav__like *')) {
         likeController();
     } else if (e.target.matches('.buttons__nav__watch', '.buttons__nav__watch*')) {
         console.log('works');
         watchController();
     }
 });
+
 
 elements.likeContainer.addEventListener('click', e => {
     const movie = e.target.closest('.nav-like');

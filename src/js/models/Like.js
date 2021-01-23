@@ -32,7 +32,7 @@ export default class Likes {
     }
 
     readFromLocalStorage() {
-        //parses data back to original DT
+        //parses data back to original form
         const likes = JSON.parse(localStorage.getItem('likedmovies'));
 
         //Restore/read the likes back to likes array

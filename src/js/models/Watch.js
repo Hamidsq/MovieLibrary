@@ -2,6 +2,7 @@ export default class Watch {
     constructor() {
         this.watch = [];
     }
+
     addWatch(id, name, img) {
         const watch = { id, name, img };
         this.watch.push(watch);
@@ -9,13 +10,10 @@ export default class Watch {
         this.saveWatch();
         return watch;
     }
-
     deleteWatch(id) {
         const index = this.watch.findIndex(el => el.id === id);
         this.watch.splice(index, 1);
-
         this.saveWatch();
-
     }
 
     isWatch(id) {
@@ -34,5 +32,4 @@ export default class Watch {
         const watch = JSON.parse(localStorage.getItem('addWatch'));
         if (watch) this.watch = watch;
     }
-
 }

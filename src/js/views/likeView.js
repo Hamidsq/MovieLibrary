@@ -1,7 +1,7 @@
 import { elements } from './base';
 
 export const toggleLikeBtn = isLiked => {
-    const iconString = isLiked ? 'icon-heart' : 'icon-heart-outlined';
+    const iconString = isLiked ? 'icon-heart' : 'icon-heart-o';
     document.querySelector('.buttons__nav__like use').setAttribute('href', `img/sprite.svg#${iconString}`);
 }
 
@@ -11,7 +11,6 @@ export const toggleLikeMenu = numLikes => {
 }
 
 export const renderLike = like => {
-
     const markUp = ` <div class="nav-like"  data-id="${like.id}">  
                                 <div class="like-img">
                                     <img src='${like.img}' class="movie-img" alt="${like.name}">
@@ -25,6 +24,6 @@ export const renderLike = like => {
 
 
 export const deleteLike = id => {
-    const el = document.querySelector(`.nav-like[id*="${id}"]`).parentElement;
+    const el = document.querySelector(`.nav-like[data-id*="${id}"]`).parentElement;
     if (el) el.parentElement.removeChild(el);
 }

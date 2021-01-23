@@ -20,7 +20,13 @@
 .film-posters {
     padding: 1rem 0;
     background-color: #fff;
-    height: 100rem;
+    height: 105rem;
+    @include respond(tab-land) {
+        height: 145rem;
+    }
+    @include respond(tab-port) {
+        height: 140rem;
+    }
 }
 
 .single__movie {
@@ -32,13 +38,7 @@
     min-height: 90rem;
     margin: 0 auto;
     width: 100%;
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
 }
-
-
-/**
-.loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-}**/

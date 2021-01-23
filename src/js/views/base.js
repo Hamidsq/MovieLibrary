@@ -37,7 +37,7 @@ export const clearLoader = () => {
 export const renderHomePage = () => {
     const markUp = `<div class="homePage__heading">
                         <p class="homePage__heading--main">Movie Library</p>
-                        <p class="homePage__heading--sub">Browse movies to find the next movie or shows to watch</p>
+                        <p class="homePage__heading--sub">Browse movies to find your favourite movie to watch</p>
                     </div>
                     <div class="homePage__img"></div>`;
 

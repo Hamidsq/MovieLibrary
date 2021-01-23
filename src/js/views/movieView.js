@@ -1,10 +1,6 @@
 import { elements } from "./base";
 
 
-export const goBack = () => {
-    console.log('button clicked');
-    window.history.back();
-}
 export const renderMovie = (movie, isLiked, isWatch, fromNavbar) => {
         let markUp;
         let img;
@@ -91,12 +87,12 @@ export const renderMovie = (movie, isLiked, isWatch, fromNavbar) => {
             <button class="buttons__nav__like">
                     click to like
                     <svg class="buttons__nav__icon">
-                        <use xlink:href="img/sprite.svg#icon-heart${isLiked ? '' : 'icon-heart-outlined'}"></use>
+                        <use xlink:href="img/sprite.svg#${isLiked ? 'icon-heart' : 'icon-heart-o'}"></use>
                     </svg>
                 </button>
             <button class="buttons__nav__watch">
                     <svg class="buttons__nav__icon">
-                        <use xlink:href="img/sprite.svg#icon-bookmark-add${isWatch ? '' : 'icon-bookmark-add1'}"></use>
+                        <use xlink:href="img/sprite.svg#${isWatch ? 'icon-bookmark' : 'icon-bookmark-o'}"></use>
                     </svg>
                     add to watch list
 
@@ -107,10 +103,7 @@ export const renderMovie = (movie, isLiked, isWatch, fromNavbar) => {
     ${fromNavbar === true ? '' :
    ` <div class="btn">
         <button class="btn__back">
-                <svg class="btn__icon">
-                    <use xlink:href="img/sprite.svg#icon-arrow-left2"></use>
-                </svg>
-                Back
+        &#x02190; Back
             </button>
 
     </div>`}
@@ -120,5 +113,6 @@ export const renderMovie = (movie, isLiked, isWatch, fromNavbar) => {
     `;
     elements.searchResList.innerHTML = markUp;
     elements.searchResPages.innerHTML = '';
+    elements.movieSearched.innerHTML='';
 
 }

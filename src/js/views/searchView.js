@@ -15,27 +15,22 @@ export const clearResult = () => {
     elements.homepage.innerHTML = '';
 }
 
-//display the search term
+//clear search query
+export const clearSearchQuery = () => {
+    elements.movieSearched.innerHTML = '';
 
-export const searchQuery = search => {
-    if (search.responseData === 'True') {
-        const markUp = `
-            <div class="movie__searched">
-                <h1>search results for &ldquo;${search.query}&rdquo;</h1>
-            </div>
-            `;
-        elements.searchResList.insertAdjacentHTML('afterbegin', markUp);
-    } else if (search.result.Response === 'False') {
-        const markUp = `
-             <div class="movie__searched">
-                 <h1>No search results found for &ldquo;${search.query}&rdquo;</h1>
-             </div>
-             `;
-        elements.searchResList.insertAdjacentHTML('afterbegin', markUp);
-    }
 }
 
-
+//display the search term
+export const searchQuery = search => {
+    if (search.responseData === 'True') {
+        const markUp = `<h1>search results for &ldquo;${search.query}&rdquo;</h1>`;
+        elements.movieSearched.insertAdjacentHTML('beforeend', markUp);
+    } else if (search.result.Response === 'False') {
+        const markUp = ` <h1>No search results found for &ldquo;${search.query}&rdquo;</h1> `;
+        elements.movieSearched.insertAdjacentHTML('beforeend', markUp);
+    }
+}
 
 //render single movie 
 export const renderMovie = movie => {
@@ -63,44 +58,39 @@ const createButton = (page, type) => `<a href="#" class="pagination__${type} btn
 
 
 const renderButton = (page, numResults, resPerPage) => {
-        //number of pages we have
-        const pages = Math.ceil(numResults / resPerPage);
-        let button;
-        if (pages === 1) {
-            elements.searchResPages.style.display = 'none';
-        } else if (page === 1 && pages > 1) {
-            //only one button to go to next page
-            button = createButton(page, 'next')
+    //number of pages we have
+    const pages = Math.ceil(numResults / resPerPage);
+    let button;
+    if (pages === 1) {
+        elements.searchResPages.style.display = 'none';
+    } else if (page === 1 && pages > 1) {
+        //only one button to go to next page
+        button = createButton(page, 'next')
 
-        } else if (page < pages) {
-            //button to go to prev and next page
-            button = `
+    } else if (page < pages) {
+        //button to go to prev and next page
+        button = `
                     ${createButton(page,'previous')}
                     ${createButton(page,'next')}
             `
-        } else if (page === pages && pages > 1) {
-            //only button to go to prev page
-            button = createButton(page, 'previous')
-        }
-        elements.searchResPages.insertAdjacentHTML('beforeend', button);
-        //elements.searchResList.insertAdjacentHTML('beforeend', button);
-
+    } else if (page === pages && pages > 1) {
+        //only button to go to prev page
+        button = createButton(page, 'previous')
     }
-    //loop through movie array and call renderMovie method on each movie 
-    //display 10 movies per page
+    elements.searchResPages.insertAdjacentHTML('beforeend', button);
+    //elements.searchResList.insertAdjacentHTML('beforeend', button);
+
+}
+
+//loop through movie array and call renderMovie method on each movie 
+//display 10 movies per page
 export const renderResults = (movies, page = 1, resPerPage = 12) => {
     console.log(movies);
     const start = (page - 1) * resPerPage;
     const end = page * resPerPage;
     movies.slice(start, end).forEach(renderMovie);
 
-    //movies.forEach(renderMovie);
 
     renderButton(page, movies.length, resPerPage);
-
-
-    //enable navigation to other pages
-    //renderButton(page, movies.length, resPerPage);
-
 
 }
