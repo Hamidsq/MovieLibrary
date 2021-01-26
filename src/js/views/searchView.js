@@ -19,9 +19,10 @@ export const clearResult = () => {
 export const clearSearchQuery = () => {
     elements.movieSearched.innerHTML = '';
 
-}
+};
 
-//display the search term
+
+//display the search term 
 export const searchQuery = search => {
     if (search.responseData === 'True') {
         const markUp = `<h1>search results for &ldquo;${search.query}&rdquo;</h1>`;
@@ -30,7 +31,7 @@ export const searchQuery = search => {
         const markUp = ` <h1>No search results found for &ldquo;${search.query}&rdquo;</h1> `;
         elements.movieSearched.insertAdjacentHTML('beforeend', markUp);
     }
-}
+};
 
 //render single movie 
 export const renderMovie = movie => {
@@ -78,14 +79,12 @@ const renderButton = (page, numResults, resPerPage) => {
         button = createButton(page, 'previous')
     }
     elements.searchResPages.insertAdjacentHTML('beforeend', button);
-    //elements.searchResList.insertAdjacentHTML('beforeend', button);
 
 }
 
 //loop through movie array and call renderMovie method on each movie 
 //display 10 movies per page
 export const renderResults = (movies, page = 1, resPerPage = 12) => {
-    console.log(movies);
     const start = (page - 1) * resPerPage;
     const end = page * resPerPage;
     movies.slice(start, end).forEach(renderMovie);

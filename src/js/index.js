@@ -27,7 +27,7 @@ const searchController = async(type, page) => {
             //2-CREATE SEARCH OBJECT
             state.search = new Search(query);
 
-            //3-PREPARE UI FOR RESULTS LIKE LOADER AND CLEAR SEARCH INPUT
+            //3-PREPARE UI FOR RESULTS 
             searchView.clearInput();
             searchView.clearResult();
             searchView.clearSearchQuery();

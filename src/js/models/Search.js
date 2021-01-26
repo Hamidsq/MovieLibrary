@@ -1,11 +1,13 @@
 import axios from 'axios';
-import { apiKey, proxy } from '../config';
 
 export default class Search {
     constructor(query) {
-        this.query = query
+        this.query = query;
     }
     async getResults(page = 1) {
+        const apiKey = process.env.API_KEY;
+        const proxy = process.env.PROXY;
+
         const moviesList = [];
         try {
             while (page >= 1 && page <= 100) {
@@ -16,12 +18,10 @@ export default class Search {
 
                 page++;
                 this.result = moviesList;
-                this.page = page
-
+                this.page = page;
             }
         } catch (error) {
             console.log(error);
         }
     }
-
 }

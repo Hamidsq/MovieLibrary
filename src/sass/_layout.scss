@@ -20,12 +20,18 @@
 .film-posters {
     padding: 1rem 0;
     background-color: #fff;
-    height: 105rem;
+    height: 140rem;
+    @include respond(big-desk) {
+        min-height: 97rem;
+    }
     @include respond(tab-land) {
-        height: 145rem;
+        min-height: 180rem;
     }
     @include respond(tab-port) {
-        height: 140rem;
+        min-height: 260rem;
+    }
+    @include respond(phone) {
+        min-height: 507rem;
     }
 }
 
