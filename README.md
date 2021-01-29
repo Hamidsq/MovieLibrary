@@ -24,7 +24,7 @@ npm run build
 npm run start
 ```
 
-#### To use the OMDB API you need to get an API key and create .env file and then add the API key the file like:
+#### To use the OMDB API you need to get an API key and create .env file and then add the API key to the file like:
 API_KEY=yourapikey
 
 PROXY=https://thingproxy.freeboard.io/fetch/
