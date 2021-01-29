@@ -42,7 +42,7 @@ const searchController = async(type, page) => {
                 searchView.renderResults(state.search.result);
 
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
         }
     } else if (type === 'oldSearch') {
@@ -61,7 +61,7 @@ const searchController = async(type, page) => {
             searchView.renderResults(state.search.result);
 
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
