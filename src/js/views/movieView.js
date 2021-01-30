@@ -26,9 +26,7 @@ export const renderMovie = (movie, isLiked, isWatch, fromNavbar) => {
         <div class="single__movie__info-name">
             <h1 class="movie-name">${movie.title === 'N/A' ? 'Unavailable' : movie.title}</h1>
         </div>
-        <div class="single__movie__info-release">
-            <h1 class="release-date">&#40;${movie.year === 'N/A' ? 'Unavailable' : movie.year}&#41;</h1>
-        </div>
+       
     </div>
 
     <div class="single__movie__details-icons">

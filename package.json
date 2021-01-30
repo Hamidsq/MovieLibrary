@@ -1,10 +1,12 @@
 {
+    "homepage": "https://saedsq.github.io/MovieLibrary",
     "name": "movielibrary",
     "version": "1.0.0",
     "description": "movie library project",
     "main": "index.js",
     "dependencies": {
-        "axios": "^0.19.2"
+        "axios": "^0.19.2",
+        "gh-pages": "^3.1.0"
     },
     "devDependencies": {
         "@babel/core": "^7.10.5",
@@ -28,7 +30,8 @@
     "scripts": {
         "dev": "webpack --mode development",
         "build": "webpack --mode production",
-        "start": "webpack-dev-server --mode development --open"
+        "start": "webpack-dev-server --mode development --open",
+        "deploy": "gh-pages -d dist"
     },
     "author": "Saed Qaderi",
     "license": "ISC"
