@@ -1,5 +1,5 @@
 {
-    "homepage": "https://saedsq.github.io/MovieLibrary",
+    "homepage": "http://saedsq.github.io/MovieLibrary",
     "name": "movielibrary",
     "version": "1.0.0",
     "description": "movie library project",
@@ -31,7 +31,10 @@
         "dev": "webpack --mode development",
         "build": "webpack --mode production",
         "start": "webpack-dev-server --mode development --open",
+        "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
+
+
     },
     "author": "Saed Qaderi",
     "license": "ISC"
