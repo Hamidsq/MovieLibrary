@@ -1,6 +1,6 @@
 # MovieLibrary
 
-# Watch it live [here]
+# Watch it live [here](https://saedsq.github.io/MovieLibrary/)
 
 #### Movie library app that fetches data from [OMDB API](http://www.omdbapi.com/)
 
